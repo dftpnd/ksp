@@ -1,0 +1,17 @@
+/**
+ * Language switch
+ *
+ * @markup
+ *   <div class="language-switch">
+ *     <a class="btn">...</a>
+ *   </div>
+ */
+.language-switch {
+    @extend %layout-on-top;
+    right: 40px;
+    top: 44px;
+
+    .btn {
+        vertical-align: top;
+    }
+}

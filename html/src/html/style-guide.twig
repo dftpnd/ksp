@@ -1,0 +1,66 @@
+{#
+    Style guide is a page for previewing theme styles
+#}
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+    <main>
+        <div class="container-demo">
+
+            <div class="row row-pad">
+                <div class="col-xs-4 theme-light theme-light-bg">
+
+                    {% include 'style-guide/text.html.twig' %}
+
+                    {% include 'style-guide/links.html.twig' %}
+
+                    {% include 'style-guide/buttons.html.twig' %}
+
+                    {% include 'style-guide/link-list.html.twig' %}
+
+                </div>
+                <div class="col-xs-4 theme-dark theme-dark-bg">
+
+                    {% include 'style-guide/text.html.twig' %}
+
+                    {% include 'style-guide/links.html.twig' %}
+
+                    {% include 'style-guide/buttons.html.twig' %}
+
+                    {% include 'style-guide/link-list.html.twig' %}
+
+                </div>
+                <div class="col-xs-4 theme-contrast theme-contrast-bg">
+
+                    {% include 'style-guide/text.html.twig' %}
+
+                    {% include 'style-guide/links.html.twig' %}
+
+                    {% include 'style-guide/buttons.html.twig' %}
+
+                    {% include 'style-guide/link-list.html.twig' %}
+
+                </div>
+            </div>
+
+            <div class="row row-pad">
+                <div class="col-xs-12 theme-light theme-light-bg">
+
+                    {% include 'style-guide/grid.html.twig' %}
+
+                </div>
+            </div>
+
+            {% include 'style-guide/headings.html.twig' %}
+
+        </div>
+    </main>
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="stylesheets/style-guide.css">
+{% endblock %}
+
+{% block javascript %}
+    <script src="javascripts/style-guide.js"></script>
+{% endblock %}

@@ -1,0 +1,94 @@
+/**
+ * Link and different link state styles
+ *
+ *
+ * @example
+ *   a     { @extend %link-default; }
+ *   nav a { @extend %link-secondary; }
+ *
+ * @markup
+ *   <a>Standard link</a>
+ *   <a class="disabled">Disabled state</a>
+ */
+
+@each $link-theme in $link-themes {
+    // Create placeholder selector for link styles
+    %link-#{$link-theme} {
+        @each $theme, $colors in $themes {
+            #{$theme} & {
+                $color: map-deep-get($colors, links, $link-theme);
+                $decoration: map-get($link-decoration, $link-theme);
+
+                @include link-normal () {
+                    @include link-color (map-get($color, normal));
+                    text-decoration: map-get($decoration, normal);
+                }
+                @include link-hover () {
+                    @include link-color (map-get($color, hover));
+                    text-decoration: map-get($decoration, hover);
+                }
+                @include link-active () {
+                    @include link-color (map-get($color, active));
+                }
+            }
+        }
+    }
+}
+
+a {
+    // All link use 'default' theme
+    @extend %link-default;
+}
+
+
+
+
+/*
+ * Cursors
+ */
+
+a,
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+
+/*
+ * Animations
+ */
+
+a,
+button,
+input[type="submit"] {
+    transition: all $duration-normal $easing-in;
+}
+
+
+/*
+ * Focused state
+ */
+
+a,
+button,
+input[type="submit"] {
+    &:focus {
+        outline: none;
+    }
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+/*
+ * Disabled state
+ */
+
+.disabled,
+:disabled,
+[disabled] {
+    @include disable-interactions();
+}

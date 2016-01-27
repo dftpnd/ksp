@@ -1,0 +1,84 @@
+/**
+ * Main content, above sitemap
+ */
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+/**
+ *
+ */
+
+.sitemap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+
+    h3 {
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .sitemap-list {
+        display: flex;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-flow: row wrap;
+        flex-direction: row;
+        padding: 0;
+        margin: 0 ;
+
+        .sitemap-block {
+            display: block;
+            margin-left: 0;
+            //
+            width: 33.33%;
+            max-width: 310px;
+            & > ul{
+                padding: 0;
+                padding-bottom: 38px;
+            }
+            & > ul > li{
+                line-height: 3rem;
+
+                ul{
+                    padding-left: 20px;
+                }
+            }
+        }
+
+        li {
+            display: block;
+        }
+    }
+}
+
+/**
+ * Header button, which toggles sitemap
+ */
+
+.sitemap-button {
+    @extend %layout-on-top;
+    position: absolute;
+    top: 40px;
+    left: 260px;
+}
+
+/**
+ * Sitemap overlay, which is above content and captures click
+ */
+
+.sitemap-overlay {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 2.7777%;
+    right: 2.7777%;
+    height: 100px;
+}

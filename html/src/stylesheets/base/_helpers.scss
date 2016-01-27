@@ -1,0 +1,121 @@
+/**
+ * Clear floats inside this element
+ *
+ * @markup
+ *   <div class="clearfix"> ... </div>
+ */
+
+.clearfix {
+    zoom: 1;
+
+    &:before,
+    &:after {
+        content: '.';
+        display: block;
+        overflow: hidden;
+        visibility: hidden;
+        font-size: 0;
+        line-height: 0;
+        width: 0;
+        height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+/**
+ * Clear before / after element
+ *
+ * @markup
+ *   <div class="clear"></div>
+ */
+
+.clear {
+    clear: both !important;
+    display: block !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    width: 100% !important;
+    height: 0 !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/**
+ * Prevent content overflow
+ *
+ * @markup
+ *   <div class="no-overflow"></div>
+ */
+
+.no-overflow {
+    overflow: hidden;
+    position: relative;
+}
+
+
+/**
+ * Move element outside the viewport while still allowing to interact
+ * using keyboard
+ *
+ * @markup
+ *   <select class="invisible">...</select>
+ */
+
+.invisible {
+    position: absolute;
+    left: -9000px;
+}
+
+
+/**
+ * Disable all animations
+ *
+ * @markup
+ *   <div class="disable-transitions">...</div>
+ */
+
+.disable-transitions * {
+    transition: none !important;
+}
+
+
+/**
+ * Hide element
+ *
+ * @markup
+ *   <div class="hidden">Hidden element</div>
+ *   <div class="hidden-sm-down">Element hidden only on mobile</div>
+ */
+
+.hidden,
+.hidden-xs-up,
+.hidden-xl-down {
+    display: none !important;
+}
+
+@each $breakpoint in $media-breakpoints {
+    @include media-breakpoint('#{$breakpoint}') {
+        .hidden-#{$breakpoint} {
+            display: none !important;
+        }
+    }
+    @include media-breakpoint('#{$breakpoint}-up') {
+        @if is-valid-breakpoint('#{$breakpoint}-down') {
+            .hidden-#{$breakpoint}-up {
+                display: none !important;
+            }
+        }
+    }
+    @include media-breakpoint('#{$breakpoint}-down') {
+        @if is-valid-breakpoint('#{$breakpoint}-down') {
+            .hidden-#{$breakpoint}-down {
+                display: none !important;
+            }
+        }
+    }
+}

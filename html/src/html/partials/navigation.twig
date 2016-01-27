@@ -1,0 +1,17 @@
+<nav{% if className %} class="{{ className }}"{% endif %}>
+    <ul>
+
+        {% for link in links %}
+            <li>
+                <a href="{{ link.href }}"{% if link.active %}class="active"{% endif %}>
+                    {% if link.main %}
+                        <b>{{ link.title }}</b>
+                    {% else %}
+                        {{ link.title }}
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+</nav>

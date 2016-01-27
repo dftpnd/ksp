@@ -1,0 +1,196 @@
+{% import 'macros/helpers.twig' as helpers %}
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+
+    <div class="news-modal theme-light">
+        <header>
+            <div class="add-right-line">
+                <a id="modal-news-close"
+                   class="btn btn-news-modal btn-hollow btn-square btn-circular btn-lg">{{ helpers.icon('close', 13 ,13) }}</a>
+            </div>
+            <aside>
+                <a id="modal-news-prev"
+                   class="btn btn-news-modal btn-hollow btn-square btn-circular btn-lg">{{ helpers.icon('arrow-left', 13, 13) }}</a>
+                <a id="modal-news-next"
+                   class="btn btn-news-modal btn-hollow btn-square btn-circular btn-lg">{{ helpers.icon('arrow-right', 13, 13) }}</a>
+            </aside>
+        </header>
+    </div>
+
+    <main class="screen-scrollable js-main">
+
+        <div class="theme-light js-theme-target">
+            {% include 'partials/header.twig' %}
+            {% set links = homepage.navigation %}
+        </div>
+
+        <section class="screen screen-active screen-on-top js-screen theme-light news-list">
+            <div class="screen-content container">
+
+                <!-- <div class="news-list container-wrapper"> -->
+                <h1 class="h1-xl with-line">
+                    <span>Новости</span>
+                    <em>компании</em>
+                </h1>
+
+                <div class="news-items row row-pad">
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                </div>
+                <div class="news-items row row-pad">
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                </div>
+                <div class="news-items row row-pad">
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                    <article class="col-xs-4 news-item">
+                        <a href="#1">
+                            <time>
+                                <span class="news-date-day">24</span>
+                                <span class="news-date">Сентября 2015</span>
+                            </time>
+
+                        <span class="news-preview">
+                            KPS Capital вошел в пятерку рейтинга «Лучшие частные банки, управляющие благосостоянием»
+                            по
+                            версии Forbes
+                        </span>
+                        </a>
+                    </article>
+                </div>
+
+
+                <div class="loading css-realised">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'partials/sitemap.twig' %}
+
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="stylesheets/news.css">
+{% endblock %}
+
+{% block javascript %}
+    <script src="javascripts/news.js"></script>
+{% endblock %}

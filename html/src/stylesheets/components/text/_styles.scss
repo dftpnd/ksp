@@ -1,0 +1,128 @@
+/**
+ * Text alignment
+ *
+ * @markup
+ *   <p class="text-left">Left aligned text</p>
+ *   <p class="text-center">Center aligned text</p>
+ *   <p class="text-right">Right aligned text</p>
+ */
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+
+
+/**
+ * Capitalize text
+ *
+ * @markup
+ *   <p class="caps">Lorem ipsum dolor sit amet</p>
+ */
+
+.caps {
+    text-transform: uppercase !important;
+}
+
+
+/**
+ * Prevent text wrapping
+ *
+ * @markup
+ *   <p class="nowrap">
+ *     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+ *     pharetra sed erat convallis suscipit. Vestibulum at interdum neque.
+ *   </p>
+ */
+
+.nowrap {
+    white-space: nowrap !important;
+}
+
+
+/**
+ * Truncate text adding dots at the end of the line if needed
+ *
+ * @markup
+ *   <p class="truncate">
+ *     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+ *     pharetra sed erat convallis suscipit. Vestibulum at interdum neque.
+ *   </p>
+ */
+
+.truncate {
+    white-space:   nowrap   !important;
+    overflow:      hidden   !important;
+    text-overflow: ellipsis !important;
+}
+
+
+/**
+ * Heading styles for elements
+ *
+ * @markup
+ *   <h2 class="h1">Looks like first level heading</h2>
+ *   <h3 class="p">Looks like any other text</h3>
+ */
+
+.h1 {
+    @extend h1;
+}
+.h2 {
+    @extend h2;
+}
+.h3 {
+    @extend h3;
+}
+.h4 {
+    @extend h4;
+}
+.h5 {
+    @extend h5;
+}
+
+
+/**
+ * Font size styles for elements
+ *
+ * @markup
+ *   <p class="text-sm">Small text size</p>
+ *   <p class="text-xs">Extra small text size</p>
+ */
+
+.text-sm {
+    @extend %text-sm;
+}
+.text-xs {
+    @extend %text-xs;
+}
+
+
+/**
+ * Lead text
+ * Double the size of normal text
+ *
+ * @markup
+ *   <p class="lead">Text</p>
+ */
+
+.lead {
+    font-size: $text-size * 2; // 4rem
+    font-weight: 300;
+    line-height: $text-size * 2; // 4rem
+
+    $spacer-double: $spacer-y * 2;
+    margin: $spacer-double 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

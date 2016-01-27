@@ -1,0 +1,84 @@
+{
+  "root": {
+    "src": "./src",
+    "dest": "./public"
+  },
+
+  "tasks": {
+    "browserSync": {
+      "server": {
+        "baseDir": "public"
+      }
+    },
+
+    "js": {
+      "src": "javascripts",
+      "dest": "javascripts",
+      "extractSharedJs": true,
+      "entries": {
+        "main": ["./main.js"],
+        "news": ["./news.js"],
+        "style-guide": ["./style-guide.js"]
+      },
+      "extensions": ["js"]
+    },
+
+    "css": {
+      "src": "stylesheets",
+      "dest": "stylesheets",
+      "autoprefixer": {
+        "browsers": ["last 3 version"]
+      },
+      "sass": {
+        "indentedSyntax": false
+      },
+      "extensions": ["sass", "scss", "css"]
+    },
+
+    "html": {
+      "src": "html",
+      "dest": "./",
+      "dataFile": "data/global.json",
+      "htmlmin": {
+        "collapseWhitespace": true
+      },
+      "extensions": ["html", "twig", "json"],
+      "excludeFolders": ["layouts", "shared", "macros", "data", "partials"]
+    },
+
+    "images": {
+      "src": "images",
+      "dest": "images",
+      "extensions": ["jpg", "png", "svg", "gif"]
+    },
+
+    "copy": {
+      "src": "videos",
+      "dest": "videos",
+      "extensions": ["mp4", "webm", "ogg"]
+    },
+
+    "fonts": {
+      "src": "fonts",
+      "dest": "fonts",
+      "extensions": ["woff2", "woff", "eot", "ttf", "otf", "svg"]
+    },
+
+    "iconFont": {
+      "src": "icon-fonts",
+      "dest": "fonts",
+      "sassDest": "generated",
+      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+    },
+
+    "svgSprite": {
+      "src": "icon-sprites",
+      "dest": "images",
+      "extensions": ["svg"]
+    },
+
+    "rev": {
+      "enabled": false
+    }
+  }
+}

@@ -1,0 +1,57 @@
+/**
+ * Animations
+ *
+ * @markup
+ *   <div class="fade in">...</div>
+ */
+
+.animate {
+    transition-duration: $duration-normal;
+    transition-timing-function: $easing-in;
+}
+
+.animate-in-out {
+    @extend .animate;
+
+    &.in {
+        transition-timing-function: $easing-out;
+    }
+}
+
+
+
+/*
+ * Fade element in or out of view
+ */
+.fade {
+    @extend .animate-in-out;
+
+    opacity: 0;
+    will-change: opacity;
+
+    &.in {
+        opacity: 1;
+    }
+}
+
+/*
+ * Move content down, but so that it's still visible
+ */
+.move {
+    @extend .animate;
+
+    transition-property: transform;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: center top;
+    will-change: transform;
+
+    box-shadow: 0 0 200px 0 rgba(0, 0, 0, 0.6);
+
+    // This is very expensive operation, prevent mouse events from
+    // causing paint events
+    @include disable-interactions ();
+
+    &.in {
+        transform: translate3d(0, 88.888%, 0) scale(0.9444);
+    }
+}

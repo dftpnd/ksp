@@ -1,0 +1,205 @@
+@keyframes slideUp {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes slideRight {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideInLeft {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.news-modal {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0efec;
+    z-index: 99;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &.active {
+        display: block;
+    }
+
+    header {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 40px;
+        left: 0;
+        right: 0;
+        padding: 0 40px;
+        z-index: 1;
+        height: 0;
+    }
+
+    .add-right-line {
+        display: block;
+        position: relative;
+        width: 89px;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 49px;
+            height: 1px;
+            background: #dbd9d5;
+        }
+    }
+
+    .modal-news-content {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        padding: 0 155px;
+        will-change: left;
+
+        &.slide-right {
+            animation: slideRight $duration-slow $easing-in both;
+        }
+
+        &.slide-in-left {
+            animation: slideInRight $duration-slow $easing-in both;
+        }
+        &.slide-left {
+            animation: slideLeft $duration-slow $easing-in both;
+        }
+
+        &.slide-in-right {
+            animation: slideInLeft $duration-slow $easing-in both;
+        }
+
+        .date-box {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            padding-top: 50px;
+            padding-bottom: 60px;
+
+            aside {
+                font-family: $text-font;
+                line-height: 14px;
+                text-transform: uppercase;
+                font-size: 10px;
+                letter-spacing: 0.08em;
+                div {
+                    font-weight: 400;
+                    color: $color-secondary;
+                    padding-bottom: 2px;
+                }
+                time {
+                    //color: #a8a39d;
+                    color: black;
+                }
+            }
+            .prev-date {
+                font-size: 14px;
+                line-height: 14px;
+                padding: 8px 9px 0 0;
+                color: $color-primary;
+            }
+        }
+        .news-modal-container {
+            display: flex;
+            max-width: 900px;
+
+            aside {
+                flex: 1 303px;
+
+                time {
+                    display: block;
+                    color: $color-primary;
+                    padding-top: 6px;
+                    font-weight: 600;
+                    font-style: normal;
+                    em {
+                        letter-spacing: -5px;
+                        font-size: 40px;
+
+                        &:after {
+                            display: block;
+                            content: '';
+                            width: 90px;
+                            height: 1px;
+                            background: $color-primary;
+                            margin-top: 8px;
+                        }
+                    }
+                    span {
+                        font-family: $text-font-alternative;
+                        font-style: italic;
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
+                }
+            }
+            article {
+                flex: 1 100%;
+                padding-bottom: 50px;
+                h1 {
+                    font-weight: 300;
+                    font-size: 4rem;
+                    line-height: 4rem;
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 1px;
+                        background: $color-primary;
+                        margin: 74px 0 52px 0;
+                    }
+                }
+                p {
+                    line-height: 26px;
+                    font-size: 20px;
+                    color: #6f6961;
+                    display: inline-block;
+                }
+                p + p {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+    }
+}

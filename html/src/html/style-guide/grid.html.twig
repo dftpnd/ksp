@@ -1,0 +1,16 @@
+{#
+    Grid
+#}
+<h2 name="grid">Grid</h2>
+
+
+{% for i in range(1, 12) %}
+    <div class="row row-pad grid-demo">
+        <div class="col-xs-{{ i }}">
+            <div class="grid-demo-content"></div>
+        </div>
+        <div class="col-xs-{{ 12 - i }}">
+            <div class="grid-demo-content"></div>
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,9 @@
+/**
+ * List mixin to unstyle it
+ */
+
+@mixin list-unstyle () {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

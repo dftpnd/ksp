@@ -1,0 +1,33 @@
+/**
+ * Grid system
+ *
+ * @markup
+ *   <div class="row">
+ *     <div class="col-xs-6"></div>
+ *     <div class="col-xs-6"></div>
+ *   </div>
+ *
+ *   <div class="row-pad">
+ *     <div class="col-xs-12 col-md-6 col-xl-4"></div>
+ *     <div class="col-xs-12 col-md-6 col-xl-4"></div>
+ *     <div class="col-xs-12 col-md-6 col-xl-4"></div>
+ *   </div>
+ */
+
+.container {
+    @include grid-container ();
+}
+.row {
+    @include grid-row ();
+}
+
+
+/*
+ * Grid columns
+ */
+
+@include grid-columns ();
+
+.col {
+    @extend .col-xs;
+}

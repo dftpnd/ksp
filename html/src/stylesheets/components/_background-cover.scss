@@ -1,0 +1,60 @@
+/**
+ * Background, which covers whole container element
+ *
+ * @markup
+ *   <div class="background-cover"><img src="..." alt="" width="..." height="..." /></div>
+ */
+
+.background-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    img,
+    video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        // Cover, for this to work element MUST have width and height attribute
+        // values set, otherwise browser doesn't understand 'auto' CSS value
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+    }
+}
+
+
+/**
+ * Background size modifier
+ * Make element half the size of the container
+ *
+ * @markup
+ *   <div class="background-cover">
+ *     <video class="background-width-50">...</video>
+ *   </div>
+ */
+
+.background-width-50 {
+    min-width: 50%;
+}
+
+
+/**
+ * Background aligned to the right center
+ *
+ * @markup
+ *   <div class="background-cover background-align-rc"><img src="..." alt="" width="..." height="..." /></div>
+ */
+
+.background-align-rc {
+    img,
+    video {
+        left: auto;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}

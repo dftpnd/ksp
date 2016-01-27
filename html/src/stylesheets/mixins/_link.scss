@@ -1,0 +1,54 @@
+/*
+ * Link normal state style mixin
+ *
+ * Sets styles to link normal state
+ */
+
+@mixin link-normal () {
+    @content;
+}
+
+
+/*
+ * Link hover state style mixin
+ *
+ * Sets styles to link hover and focused states
+ */
+
+@mixin link-hover () {
+    // .has-hover &:hover,  // if hover events are supported
+    // .has-hover &:focus { // if hover events are supported
+
+    .has-hover &:hover {  // if hover events are supported
+        @content;
+    }
+}
+
+
+/*
+ * Link active state style mixin
+ *
+ * Sets styles to link active state
+ */
+
+@mixin link-active () {
+    &:active,
+    &.active { // prevent hover styles overwriting active
+        @content;
+    }
+}
+
+
+/*
+ * Link color
+ *
+ * Sets link color for text and icons
+ */
+
+@mixin link-color ($color) {
+    color: $color;
+
+    .icon {
+        fill: $color;
+    }
+}

@@ -1,0 +1,21 @@
+/**
+ * Button group
+ *
+ * @markup
+ *   <ul class="button-group js-button-group">
+ *     <li><a class="btn btn-primary disabled">Active item</a></li>
+ *     <li><a class="btn btn-hollow">Inactive item</a></li>
+ *     <li><a class="btn btn-hollow">Inactive item</a></li>
+ *   </ul>
+ */
+.button-group {
+    @include list-unstyle ();
+
+    li {
+        $padding-x: $spacer-x / 2;
+        $padding-y: $spacer-y / 2;
+
+        display: inline-flex; // like inline-block, but without spacings
+        padding: $padding-y $padding-x 0 0;
+    }
+}

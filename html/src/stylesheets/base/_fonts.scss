@@ -1,0 +1,124 @@
+/*
+ * Futura PT font
+ *
+ * Thin        - 100
+ * Extra Light - 200
+ * Light       - 300
+ * Book        - 400
+ * Medium      - 500
+ * Demi        - 600
+ * Heavy       - 700
+ * Bold        - 800
+ * ExtraBold   - 900
+ */
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 300;
+    src: url("#{$font-path}/Futura PT/FuturaPTLight.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 300;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTLightOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 400;
+    src: url("#{$font-path}/Futura PT/FuturaPTBook.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 400;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTBookOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 500;
+    src: url("#{$font-path}/Futura PT/FuturaPTMedium.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 500;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTMediumOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 600;
+    src: url("#{$font-path}/Futura PT/FuturaPTDemi.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 600;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTDemiOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 700;
+    src: url("#{$font-path}/Futura PT/FuturaPTHeavy.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 700;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTHeavyOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 800;
+    src: url("#{$font-path}/Futura PT/FuturaPTBold.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 800;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTBoldOblique.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 900;
+    src: url("#{$font-path}/Futura PT/FuturaPTExtraHeavy.otf") format("opentype");
+}
+@font-face {
+    font-family: "Futura PT";
+    font-weight: 900;
+    font-style: italic;
+    src: url("#{$font-path}/Futura PT/FuturaPTExtraHeavyOblique.otf") format("opentype");
+}
+
+
+/*
+ * Warnock Pro font
+ *
+ * LightDisp - 300
+ * LightIt   - 300 + italic
+ * Bold      - 800
+ */
+
+@font-face {
+    font-family: "Warnock Pro";
+    font-weight: 300;
+    src: url("#{$font-path}/Warnock Pro/WarnockPro-LightDisp.otf") format("opentype");
+}
+@font-face {
+    font-family: "Warnock Pro italic";
+    font-weight: 300;
+    font-style: italic;
+    src: url("#{$font-path}/Warnock Pro/WarnockPro-LightIt.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Warnock Pro";
+    font-weight: 800;
+    src: url("#{$font-path}/Warnock Pro/WarnockPro-Bold.otf") format("opentype");
+}

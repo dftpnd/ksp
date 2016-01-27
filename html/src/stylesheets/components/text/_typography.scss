@@ -1,0 +1,109 @@
+/**
+ * Default text and font styles
+ *
+ * @markup
+ *   <h1>Heading 1</h1>
+ *   <h2>Heading 2</h2>
+ *   <h3>Heading 3</h3>
+ *   <h4>Heading 4</h4>
+ *   <h5>Heading 5</h5>
+ *   <p>
+ *     Paragraph text
+ *   </p>
+ *   <p>
+ *     <small>Small paragraph text</small>
+ *   </p>
+ */
+
+html {
+    font-size: 62.5%; // 1rem === 10px
+}
+
+body,
+input,
+textarea,
+button {
+    font-size:   $text-size;
+    font-family: $text-font;
+    line-height: $text-height;
+}
+
+small,
+%text-sm {
+    font-size:   $text-sm-size;
+    line-height: $text-sm-height;
+    letter-spacing: 0.08rem;
+}
+
+small small,
+%text-sm small,
+%text-xs {
+    font-size:   $text-xs-size;
+    line-height: $text-xs-height;
+    letter-spacing: 0.06rem;
+}
+
+
+@each $theme, $colors in $themes {
+    #{$theme} {
+        &,
+        input,
+        textarea,
+        button {
+            color: map-get($colors, text);
+        }
+    }
+}
+
+
+/*
+ * Headings
+ */
+
+h1, h2, h3, h4, h5 {
+    font-family: $text-heading-font;
+    font-weight: bold;
+
+    @each $theme, $colors in $themes {
+        #{$theme} & {
+            color:   map-get($colors, heading);
+        }
+    }
+}
+h1 {
+    font-size:   $text-h1-size;
+    line-height: $text-h1-height;
+}
+h2 {
+    font-size:   $text-h2-size;
+    line-height: $text-h2-height;
+}
+h3 {
+    font-size:   $text-h3-size;
+    line-height: $text-h3-height;
+}
+h4 {
+    font-size:   $text-h4-size;
+    line-height: $text-h4-height;
+}
+h5 {
+    font-size:   $text-h5-size;
+    line-height: $text-h5-height;
+}
+
+
+/*
+ * Margins and paddings
+ */
+
+h1, h2, h3, h4, h5,
+hr, p, blockquote, table, hr, iframe, object, pre {
+    margin: $spacer-y 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

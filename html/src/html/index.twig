@@ -1,0 +1,309 @@
+{% import 'macros/helpers.twig' as helpers %}
+{% import 'macros/diagrams.twig' as digrams %}
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+
+    <main class="screen-container js-main">
+
+        <div class="theme-light js-theme-target">
+            {% include 'partials/header.twig' %}
+
+            {% set links = homepage.navigation %}
+            {% set className = 'js-navigation' %}
+            {% include 'partials/navigation-sidebar.twig' %}
+        </div>
+
+        {#
+            Each screen takes 100% of the viewport, active screen has
+            "screen-active" and "screen-on-top" classnames
+
+            During animation there 2 "screen-active" screens, but always only
+            one "screen-on-top"
+
+            "js-screen" classname is needed for JS to locate screens
+
+            Each screen is themed individually and requires "data-screen-theme"
+            attribute to apply themes classname to the ".js-theme-target"
+            elements
+        #}
+        <section class="screen screen-active screen-on-top js-screen theme-light theme-light-bg" data-screen-theme="light">
+
+            <div class="screen-box">
+                <div class="screen-box__body-bg"></div>
+                <div class="screen-box__body-wrap">
+                    {{ helpers.video('/videos/homepage/background-video', {
+                        'autoplay': true,
+                        'class': 'screen__video'
+                    }) }}
+                    <img class="screen-box__body-img" src="/images/homepage/backgrounds/masks/01.png" alt=""  />
+                </div>
+            </div>
+
+            <div class="screen-content container">
+                <h1 class="h1-xl with-subheading">
+                    Ценность <em>участия</em>
+                </h1>
+                <p class="lead">
+                    Мы привносим ценный вклад в бизнес и жизнь своих клиентов и
+                    деловых партнеров.
+                </p>
+
+                <aside>
+                    <ul class="link-list">
+                        <li><a href="#">управление активами</a></li>
+                        <li><a href="#">финансовый консалтинг</a></li>
+                        <li><a href="#">инвестиции</a></li>
+                    </ul>
+                </aside>
+                <div class="icon-use-scroll">Используйте<br>скролл</div>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-light theme-light-bg" data-screen-theme="light">
+
+            <div class="screen-box">
+                <div class="screen-box__body-bg"></div>
+                <div class="screen-box__body-wrap">
+                    {{ helpers.video('/videos/homepage/background-video', {
+                        'autoplay': true,
+                        'class': 'screen__video'
+                    }) }}
+                    <img class="screen-box__body-img" src="/images/homepage/backgrounds/masks/02.png" alt=""  />
+                </div>
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1-xl">
+                    Опыт
+                </h2>
+                <p class="lead">
+                    <strong>KSP</strong> — это уникальный опыт решения объемных
+                    комплексных задач, начиная с <strong>2007</strong> года.
+                </p>
+                <ul class="info-subtitle">
+                    <li>
+                        <em>140</em><span>млрд<br>рублей</span>
+                        <div>Оборот консалтинговых<br>
+                            проектов</div>
+                    </li>
+                    <li>
+                        <em>15</em><span>млрд<br>рублей</span>
+                        <div>Оборот собственных<br>
+                            инвестиций</div>
+                    </li>
+                </ul>
+
+                <aside></aside>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-contrast theme-contrast-bg" data-screen-theme="contrast">
+
+            <div class="background-cover background-align-rc">
+                <img src="/images/homepage/backgrounds/gold/02.jpg" alt="" width="1600" height="1000" />
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1 with-subheading">
+                    Опыт. <em>проекты компании</em>
+                </h2>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-light theme-light-bg" data-screen-theme="light">
+
+            <div class="screen-box">
+                <div class="screen-box__body-bg"></div>
+                <div class="screen-box__body-wrap">
+                    {{ helpers.video('/videos/homepage/background-video', {
+                        'autoplay': true,
+                        'class': 'screen__video'
+                    }) }}
+                    <img class="screen-box__body-img" src="/images/homepage/backgrounds/masks/03.png" alt=""  />
+                </div>
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1">
+                    Эффективность
+                </h2>
+                <p class="lead">
+                    Анализ рынка, систематическая работа по улучшению объема и
+                    качества теоретической и практической базы, поиск новых
+                    тенденций и соответствующих им новых возможностей.
+                </p>
+
+                <aside></aside>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-contrast theme-contrast-bg" data-screen-theme="contrast">
+
+            <div class="background-cover background-align-rc">
+                <img src="/images/homepage/backgrounds/gold/03.jpg" alt="" width="1600" height="1000" />
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1 with-subheading">
+                    Эффективность. <em>личное участие</em>
+                </h2>
+                <p class="lead">
+                    Президент компании принимает личное участие в важных фазах
+                    каждого проекта.
+                </p>
+                <p class="text-alt">
+                    Руководитель компании <a href="#">Сергей Павлович
+                    Котляренко</a> лично участвует в ключевых фазах каждого
+                    проекта, обеспечивая эффективность услуг компании и их
+                    соответствие высочайшим стандартам качества.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-contrast theme-contrast-bg" data-screen-theme="contrast">
+
+            <div class="background-cover background-align-rc">
+                <img src="/images/homepage/backgrounds/gold/03.jpg" alt="" width="1600" height="1000" />
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1 with-subheading">
+                    Эффективность. <em>выгодные связи</em>
+                </h2>
+                <p class="lead">
+                    Помимо прямого обслуживания, компания помогает клиентам
+                    налаживать взаимовыгодные связи между собой.
+                </p>
+                <p class="text-alt">
+                    Уровень и эффективность предлагаемых решений привлекают в
+                    КСП Капитал клиентов, выдвигающих самые высокие требования
+                    к объему и качеству и оперативности услуг.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-contrast theme-contrast-bg" data-screen-theme="contrast">
+
+            <div class="background-cover background-align-rc">
+                <img src="/images/homepage/backgrounds/gold/04.jpg" alt="" width="1000" height="1000" />
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1 with-subheading">
+                    Эффективность. <em>уникальные услуги</em>
+                </h2>
+                <p class="lead">
+                    Мы предлагаем индивидуальный подход и уникальные услуги
+                    каждому клиенту.
+                </p>
+                <p class="text-alt">
+                    Накопленный опыт и практические навыки в различных сферах
+                    позволяют компании использовать нестандартные подходы и
+                    уникальные методики для решения сколь угодно сложных,
+                    нетривиальных задач клиентов, а также предлагать уникальные
+                    рыночные возможности.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-light theme-light-bg" data-screen-theme="light">
+
+            <div class="screen-box">
+                <div class="screen-box__body-bg"></div>
+                <div class="screen-box__body-wrap">
+                    {{ helpers.video('/videos/homepage/background-video', {
+                        'autoplay': true,
+                        'class': 'screen__video'
+                    }) }}
+                    <img class="screen-box__body-img" src="/images/homepage/backgrounds/masks/04.png" alt=""  />
+                </div>
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1-xl">Гибкость</h2>
+                <p class="lead">
+                    <strong>KSP</strong> предлагает помощь в реализации всей
+                    цепочки услуг управления капиталом — от разработки стратегии
+                    до ее осуществления и полного сопровождения в процессе.
+                </p>
+
+                <aside></aside>
+            </div>
+
+        </section>
+
+        <section class="screen js-screen theme-contrast theme-contrast-bg" data-screen-theme="contrast">
+
+            <div class="background-cover background-align-rc">
+                <img src="/images/homepage/backgrounds/gold/05.jpg" alt="" width="1600" height="1000" />
+            </div>
+
+            <div class="screen-content container">
+                <h2 class="h1 with-subheading">
+                    Гибкость. <em>уникальный пакет услуг</em>
+                </h2>
+
+                <div class="row">
+                    <div class="col col-xl-5">
+
+                        <p class="lead">
+                            Мы создаем персональный пакет услуг основываясь на
+                            тщательном изучении ваших уникальных потребностей.
+                        </p>
+
+                        <p class="text-alt">
+                            Выберите потребность:
+                        </p>
+
+                        <ul class="button-group js-button-group">
+                            <li><a class="btn btn-primary" data-value="01" data-values="[0.2, 0.3, 0.2, 0.2, 0.1]">Вложения в рискованные высокодоходные активы</a></li>
+                            <li><a class="btn btn-hollow" data-value="02"  data-values="[0.3, 0.1, 0.2, 0.2, 0.2]">Сохранение капитала</a></li>
+                            <li><a class="btn btn-hollow" data-value="03"  data-values="[0.2, 0.3, 0.3, 0.1, 0.1]">Диверсификация портфеля инвестиций</a></li>
+                            <li><a class="btn btn-hollow" data-value="04"  data-values="[0.2, 0.3, 0.3, 0.2, 0.0]">Развитие новых рыночных ниш</a></li>
+                            <li><a class="btn btn-hollow" data-value="05"  data-values="[0.1, 0.6, 0.2, 0.1, 0.0]">Привлечение инвестиций</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="col col-xl-7">
+
+                        {{ digrams.diagram4({
+                            'labels': [
+                                'Управление активами',
+                                'Инвестиции',
+                                'Финансовый консалтинг',
+                                'Юридические услуги',
+                                'Фидуциарные услуги'
+                            ],
+                            'values': [
+                                0.2,
+                                0.3,
+                                0.2,
+                                0.2,
+                                0.1
+                            ]
+                        }) }}
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    {% include 'partials/sitemap.twig' %}
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="javascripts/main.js"></script>
+{% endblock %}

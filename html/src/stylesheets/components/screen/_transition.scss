@@ -1,0 +1,80 @@
+/**
+ * Animation styles for screens
+ */
+
+.screen-container {
+    perspective: 1200px;
+}
+
+.screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+.screen-active,
+.no-js .screen {
+    visibility: visible;
+}
+.screen-on-top {
+    z-index: 3;
+}
+
+
+/*
+
+Animations
+======
+
+Animate screen into / out of view,
+based on http://tympanus.net/Development/PageTransitions/
+
+    <div class="screen screen-transition-scaleDown"></div>
+    <div class="screen screen-transition-moveFromTop screen-current"></div>
+
+*/
+
+/* Move */
+.screen-transition-moveFromTop {
+	animation: moveFromTop $duration-slow $easing-in both;
+
+    .screen-content {
+        animation: moveFromTopContent $duration-slow $easing-in both;
+    }
+}
+.screen-transition-moveFromBottom {
+	animation: moveFromBottom $duration-slow $easing-in both;
+
+    .screen-content {
+        animation: moveFromBottomContent $duration-slow $easing-in both;
+    }
+}
+
+/* Scale / fade */
+.screen-transition-scaleDown {
+	animation: scaleDown $duration-slow $easing-in both;
+}
+
+$translateValue: 99%; //99 value (instead of 100) bug fixes in safari animations
+/* Keyframes */
+@keyframes moveFromTop {
+    from { transform: translateY(-$translateValue); }
+}
+@keyframes moveFromBottom {
+	from { transform: translateY($translateValue); }
+}
+@keyframes moveFromTopContent {
+	from { transform: translateY(-12vh); }
+}
+@keyframes moveFromBottomContent {
+	from { transform: translateY(8vh); }
+}
+@keyframes scaleDown {
+	from { }
+	to { opacity: 0; transform: scale(.8); }
+}

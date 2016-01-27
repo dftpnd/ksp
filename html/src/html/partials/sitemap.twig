@@ -1,0 +1,90 @@
+{% import 'macros/helpers.twig' as helpers %}
+
+<section class="sitemap hidden js-sitemap theme-dark theme-dark-bg">
+
+    {# Logo #}
+    <a href="/" class="logo">{{ helpers.icon('logo', 145, 30) }}</a>
+
+    {# Sitemap close button #}
+    <a class="btn btn-link sitemap-button js-sitemap-toggle" tabIndex="0">{{ helpers.icon('close-large', 27, 27) }}</a>
+
+    {# Language switch #}
+    {% include 'partials/language-switch.twig' %}
+
+    {# Bottom overlay, which will simulate click on content #}
+    <a class="sitemap-overlay js-sitemap-toggle"></a>
+
+    <div class="container">
+        <ul class="sitemap-list">
+            <li class="sitemap-block ">
+                <h3>Главная</h3>
+                <ul>
+                    <li>
+                        <a href="#">Ценности</a>
+                    </li>
+                    <li>
+                        <a href="#">Опыт</a>
+                        <ul>
+                            <li><a href="#">Проекты компании</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Эффективность</a>
+                        <ul>
+                            <li><a href="#">Личное участие</a></li>
+                            <li><a href="#">Выгодные связи</a></li>
+                            <li><a href="#">Уникальные услуги</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Гибкость</a>
+                        <ul>
+                            <li><a href="#">Уникальный пакет услуг</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Компания</h3>
+                <ul>
+                    <li><a href="#">Миссия</a></li>
+                    <li><a href="#">История</a></li>
+                    <li><a href="#">Президент</a></li>
+                </ul>
+            </li>
+            <li class="sitemap-block">
+                <h3>Услуги</h3>
+                <ul>
+                    <li><a href="#">Управление активами</a></li>
+                    <li><a href="#">Инвестиции</a></li>
+                    <li><a href="#">Финансовый консалтинг</a></li>
+                    <li><a href="#">Юридические услуги</a></li>
+                    <li><a href="#">Фидуциарные услуги</a></li>
+                </ul>
+
+                <h3>Проекты</h3>
+                <ul>
+                    <li><a href="#">Tion</a></li>
+                    <li><a href="#">Aerocity</a></li>
+                    <li><a href="#">Charterscanner</a></li>
+                    <li><a href="#">Meetingpoint</a></li>
+                    <li><a href="#">Business Center Moskva</a></li>
+                    <li><a href="#">«Трансформаторы и монтаж»</a></li>
+                    <li><a href="#">GetAClass</a></li>
+                </ul>
+            </li>
+            <li class="sitemap-block">
+                <h3>Команда</h3>
+                <ul>
+                    <li><a href="#">Котляренко Сергей Павлович</a></li>
+                    <li><a href="#">Короткова Юлия Алексеевна</a></li>
+                    <li><a href="#">Нариенко Денис Владимирович</a></li>
+                    <li><a href="#">Ряузов Никита Дмитриевич</a></li>
+                    <li><a href="#">Ратникова Елена Павловна</a></li>
+                </ul>
+
+                <h3>Новости</h3>
+                <h3>Контакты</h3>
+            </li>
+        </ul>
+    </div>
+</section>

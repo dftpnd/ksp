@@ -1,0 +1,287 @@
+$image-path: '/images';
+$font-path:  '/fonts';
+
+/**
+ * Animation & transition options
+ *
+ * @param {time} $duration-normal Animation duration
+ */
+
+$easing-in:                 cubic-bezier(.25,  .74, .22, .99);
+$easing-out:                cubic-bezier(.47,  .04, .5, -.06);
+$easing-in-out:             cubic-bezier(.55,   0,  .1, 1   );
+
+$duration-normal:           .4s;
+$duration-fast:             $duration-normal / 2;
+$duration-slow:             $duration-normal * 2;
+
+/**
+ * Colors
+ *
+ * @param {color} $color-primary Primary color
+ * @param {color} $color-success Success color
+ * @param {color} $color-error   Error color
+ * @param {color} $color-line    Line color
+ */
+
+$color-primary:             #b99867;
+$color-secondary:           #42413e;
+$color-success:             #5cb85c;
+$color-error:               #d9534f;
+
+
+/**
+ * Body
+ *
+ * Settings for the `<body>` element
+ *
+ * @param {list} $theme-light    Base colors for light theme
+ * @param {list} $theme-dark     Base colors for dark theme
+ * @param {list} $theme-contrast Base colors for contrast theme
+ */
+
+$theme-light:    (
+    // Primary is used for small elements, including homepage headings
+    // Secondary is used for small elements, including homepage sub-headings
+    'primary':      $color-primary,
+    'secondary':    #a8a39d,
+
+    'background':   #fff,
+    'line':         rgba(#a8a39d, 0.3),
+
+    'text':         #6f6961,
+    'heading':      $color-secondary,
+
+    'links': (
+        'default': (
+            'normal':   #6f6961,
+            'hover':    $color-primary,
+            'active':   $color-primary
+        ),
+        'nav-primary': (
+            'normal':   #a8a39d,
+            'hover':    $color-primary,
+            'active':   $color-secondary
+        ),
+        'nav-secondary': (
+            'normal':   rgba($color-secondary, 0.3),
+            'hover':    $color-primary,
+            'active':   $color-secondary
+        )
+    )
+);
+
+$theme-dark:     (
+    'primary':      $color-primary,
+    'secondary':    #a8a39d,
+
+    'background':   #32312e,
+    'line':         $color-primary,
+
+    'text':         #a8a39d,
+    'heading':      $color-primary,
+
+    'links': (
+        'default': (
+            'normal':   #a8a39d,
+            'hover':    #fff,
+            'active':   #fff
+        ),
+        'nav-primary': (
+            'normal':   #a8a39d,
+            'hover':    #fff,
+            'active':   #fff
+        ),
+        'nav-secondary': (
+            'normal':   #a8a39d,
+            'hover':    #fff,
+            'active':   #fff
+        )
+    )
+);
+
+$theme-contrast: (
+    'primary':      #fff,
+    'secondary':    $color-secondary,
+
+    'background':   $color-primary,
+    'line':         #fff,
+
+    'text':         #fff,
+    'heading':      $color-secondary,
+
+    'links': (
+        'default': (
+            'normal':   #fff,
+            'hover':    #fff,
+            'active':   #fff
+        ),
+        'nav-primary': (
+            'normal':   #fff,
+            'hover':    $color-secondary,
+            'active':   $color-secondary
+        ),
+        'nav-secondary': (
+            'normal':   rgba($color-secondary, 0.3),
+            'hover':    $color-secondary,
+            'active':   rgba($color-secondary, 0.6)
+        )
+    )
+);
+
+$themes: (
+    '.theme-light':    $theme-light,
+    '.theme-dark':     $theme-dark,
+    '.theme-contrast': $theme-contrast
+);
+
+$link-themes: (
+    'default',
+    'nav-primary',
+    'nav-secondary'
+);
+
+
+/**
+ * Spacing
+ *
+ * Settings for spacing between most of the elements
+ *
+ * @param {number} $spacer   Default spacing
+ * @param {number} $spacer-x Horizontal spacing
+ * @param {number} $spacer-y Vertical spacing
+ */
+
+$spacer:                     2rem !default;
+$spacer-x:                   $spacer !default;
+$spacer-y:                   $spacer !default;
+
+
+/*
+ * Text
+ *
+ * Settings for text colors, fonts
+ */
+
+$text-font:                 "Futura PT", Helvetica, Arial, sans-serif;
+$text-font-alternative:     "Warnock Pro", "Times New Roman", Times, serif;
+$text-heading-font:         $text-font;
+
+// normal
+$text-size:                 2.0rem;
+$text-height:               2.8rem;
+
+// small
+$text-sm-size:              1.4rem;
+$text-sm-height:            2.0rem;
+
+// small small
+$text-xs-size:              1.0rem;
+$text-xs-height:            1.5rem;
+
+$text-h1-size:              12.0rem;
+$text-h1-height:            $text-h1-size + 0.4rem;
+
+$text-h2-size:              6.0rem;
+$text-h2-height:            $text-h2-size + 0.4rem;
+
+$text-h3-size:              3.0rem;
+$text-h3-height:            $text-h3-size + 0.4rem;
+
+$text-h4-size:              1.6rem; // <- invalid
+$text-h4-height:            $text-h4-size + 0.4rem;
+
+$text-h5-size:              1.4rem; // <- invalid
+$text-h5-height:            $text-h5-size + 0.4rem;
+
+
+/**
+ * Links
+ *
+ * Settings for the anchor elements
+ *
+ * @param {color}  $link-color            Link color
+ * @param {string} $link-decoration       Link decoration style
+ * @param {color}  $link-hover-color      Link hover, active state color
+ * @param {string} $link-hover-decoration Link hover, active state decoration style
+ */
+
+$link-decoration: (
+    'default': (
+        'normal': none,
+        'hover':  underline
+    ),
+    'nav-primary': (
+        'normal': none,
+        'hover':  none
+    ),
+    'nav-secondary': (
+        'normal': none,
+        'hover':  none
+    )
+);
+
+
+/**
+ * Buttons
+ *
+ * Settings for button colors, etc
+ *
+ * @param {number} $button-size         Button size
+ * @param {number} $button-padding      Button paddings
+ * @param {number} $button-rounded      Button border radius
+ *
+ * @param {number} $button-sm-size      Small button size
+ * @param {number} $button-sm-padding   Small button paddings
+ * @param {number} $button-sm-rounded   Small button border radius
+ * @param {number} $button-sm-text-size Small button text size
+ *
+ * @param {number} $button-lg-size      Large button size
+ * @param {number} $button-lg-padding   Large button paddings
+ * @param {number} $button-lg-rounded   Large button border radius
+ * @param {number} $button-lg-text-size Large button text size
+ */
+
+$button-sm-size:            24px;
+$button-sm-padding:         0 8px;
+$button-sm-rounded:         3px;
+$button-sm-text-size:       $text-xs-size;
+
+$button-size:               30px;
+$button-padding:            0 10px;
+$button-rounded:            3px;
+$button-text-size:          1.8rem;
+
+$button-lg-size:            49px;
+$button-lg-padding:         0 18px;
+$button-lg-rounded:         3px;
+$button-lg-text-size:       1.8rem;
+
+
+/**
+ * Grid
+ *
+ * Grid system settings
+ *
+ * @param {number} $grid-columns              Number of columns in the grid
+ * @param {number} $grid-gutter-width         Grid gutter size
+ * @param {array}  $grid-container-max-widths Sizes of grid container for different screens
+ */
+
+$grid-columns:              12;
+$grid-gutter-width:         $spacer-x;
+
+$grid-container-max-widths: (
+  // sm: 480px,
+  // md: 720px,
+  // lg: 960px,
+  // xl: 1140px
+);
+
+$grid-container-paddings: (
+    // xs: 0,
+    // sm: 0,
+    // md: 0,
+    lg: 160px 100px 0 270px,
+    xl: 160px 100px 0 270px
+);

@@ -1,0 +1,40 @@
+/**
+ * Logotype
+ *
+ * @markup
+ *   <a class="logo">
+ *     <svg class="icon">...</svg>
+ *   </a>
+ */
+.logo {
+    @extend %layout-on-top;
+    left: 40px;
+    top: 40px;
+}
+
+.theme-light .logo {
+    @include link-normal () {
+        @include link-color ($color-secondary);
+    }
+    @include link-hover () {
+        @include link-color ($color-primary);
+    }
+}
+
+.theme-dark .logo {
+    @include link-normal () {
+        @include link-color (#a8a39d);
+    }
+    @include link-hover () {
+        @include link-color ($color-primary);
+    }
+}
+
+.theme-contrast .logo {
+    @include link-normal () {
+        @include link-color ($color-secondary);
+    }
+    @include link-hover () {
+        @include link-color (#fff);
+    }
+}

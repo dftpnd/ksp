@@ -1,0 +1,59 @@
+/*
+ * Body styles
+ */
+
+@each $theme, $colors in $themes {
+    #{$theme}-bg {
+        background-color: map-get($colors, background);
+    }
+}
+
+html,
+body {
+    // Scrolling on main element
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    @extend .theme-dark-bg;
+}
+
+main {
+    // Scrolling on main element
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+/**
+ * Layout component, which is above other components
+ */
+
+%layout-on-top {
+    position: absolute;
+    z-index: 5;
+}
+
+
+/*
+ * Fix box sizing nightmare
+ */
+
+* {
+    &,
+    &:after,
+    &:before {
+        box-sizing: border-box;
+    }
+}
+
+
+/*
+ * Responsive Images
+ */
+
+img {
+    max-width: 100%;
+    height: auto;
+}

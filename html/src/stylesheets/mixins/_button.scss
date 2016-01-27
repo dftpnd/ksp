@@ -1,0 +1,75 @@
+/*
+ * Button normal state style mixin
+ *
+ * Sets styles to button normal state
+ *
+ * 1. Disabled styles same normal link styles, classname allows disabling links
+ * 2. For buttons and inputs
+ * 3. Make sure importance is above :focus and :hover
+ */
+
+@mixin button-normal () {
+    &,
+    &.disabled,  // 1.
+    &:disabled,  // 2.
+    &[disabled], // 2.
+    .has-hover &.disabled { // 3.
+        @content;
+    }
+}
+
+
+/*
+ * Button hover state style mixin
+ *
+ * Sets styles to button hover,active, focused states
+ */
+
+@mixin button-hover () {
+    .has-hover &:hover, // if hover events are supported
+    .has-hover &:focus, // if hover events are supported
+    &:active,
+    &.active {
+        @content;
+    }
+}
+
+
+/*
+ * Button style
+ *
+ * Sets hover, active, focus, disabled styles
+ */
+
+@mixin button-variant ($color, $color-active, $background: transparent, $background-active: transparent, $border: transparent, $border-active: transparent) {
+    @include button-hover () {
+        color: $color-active;
+        background-color: $background-active;
+        border-color: $border-active;
+        text-decoration: none;
+
+        .icon {
+            fill: $color-active;
+        }
+    }
+
+    @include button-normal () {
+        color: $color;
+        background-color: $background;
+        border-color: $border;
+        text-decoration: none;
+
+        .icon {
+            fill: $color;
+        }
+    }
+
+    // While button is loading hide text/icon
+    &.loading {
+        color: transparent;
+
+        .icon {
+            fill: transparent;
+        }
+    }
+}

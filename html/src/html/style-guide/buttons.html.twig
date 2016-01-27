@@ -1,0 +1,69 @@
+{% import 'macros/helpers.twig' as helpers %}
+
+{#
+    Buttons
+#}
+<h2 name="btn">Buttons</h2>
+
+<h3>Styles</h3>
+
+<p>
+    <a class="btn btn-primary">Primary button</a><br />
+    <a class="btn btn-primary active">:active state</a><br />
+    <a class="btn btn-primary disabled">:disabled state</a>
+</p>
+
+<p>
+    <a class="btn btn-hollow">Hollow button</a><br />
+    <a class="btn btn-hollow active">:active state</a><br />
+    <a class="btn btn-hollow disabled">:disabled state</a>
+</p>
+
+<p>
+    <a class="btn btn-link">Link button</a><br />
+    <a class="btn btn-link active">:active state</a><br />
+    <a class="btn btn-link disabled">:disabled state</a>
+</p>
+
+<h3>Sizes</h3>
+
+<p>
+    <a class="btn btn-hollow btn-sm">Small</a>
+    <a class="btn btn-hollow">Normal</a>
+    <a class="btn btn-hollow btn-lg">Large</a>
+</p>
+
+<p>
+    <a class="btn btn-primary btn-sm">Small</a>
+    <a class="btn btn-primary">Normal</a>
+    <a class="btn btn-primary btn-lg">Large</a>
+</p>
+
+<h3>Circular button</h3>
+
+<p>
+    <a class="btn btn-hollow btn-circular btn-sm">Small</a>
+    <a class="btn btn-hollow btn-circular">Normal</a>
+    <a class="btn btn-hollow btn-circular btn-lg">Large</a>
+</p>
+
+<p>
+    <a class="btn btn-primary btn-circular btn-sm">Small</a>
+    <a class="btn btn-primary btn-circular">Normal</a>
+    <a class="btn btn-primary btn-circular btn-lg">Large</a>
+</p>
+
+<h3>Square button</h3>
+
+<p>
+    <a class="btn btn-hollow btn-square btn-sm">S</a>
+    <a class="btn btn-hollow btn-square">N</a>
+    <a class="btn btn-hollow btn-square btn-lg">{{ helpers.icon('arrow-right', 7, 13) }}</a>
+</p>
+<p>
+    <a class="btn btn-hollow btn-square btn-circular btn-sm">S</a>
+    <a class="btn btn-hollow btn-square btn-circular">N</a>
+    <a class="btn btn-hollow btn-square btn-circular btn-lg">{{ helpers.icon('close', 13, 13) }}</a>
+</p>
+
+<hr />

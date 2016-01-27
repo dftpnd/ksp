@@ -1,0 +1,74 @@
+/*
+ * Grid generator mixins
+ */
+
+@mixin grid-container ($gutter: $grid-gutter-width, $max-width: $grid-container-max-widths, $paddings: $grid-container-paddings) {
+    margin-right: auto;
+    margin-left: auto;
+
+    @if $gutter {
+        padding-left:  ($gutter / 2);
+        padding-right: ($gutter / 2);
+    }
+
+    @each $breakpoint, $container-max-width in $grid-container-max-widths {
+        @include media-breakpoint('#{$breakpoint}-up') {
+            max-width: if($container-max-width > 0, $container-max-width, none);
+        }
+    }
+
+    @each $breakpoint, $container-padding in $grid-container-paddings {
+        @include media-breakpoint('#{$breakpoint}-up') {
+            padding: $container-padding;
+        }
+    }
+}
+
+@mixin grid-row ($gutter: $grid-gutter-width) {
+    display: flex;
+    flex-wrap: wrap;
+
+    @if $gutter {
+        &-pad {
+            margin-left:  ($gutter / -2);
+            margin-right: ($gutter / -2);
+        }
+    }
+}
+
+@mixin grid-columns ($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $media-breakpoints) {
+    %grid-column {
+        flex: auto;
+
+        .row-pad > & {
+            padding-left:  ($gutter / 2);
+            padding-right: ($gutter / 2);
+        }
+    }
+
+    @each $breakpoint in $breakpoints {
+        @if $gutter {
+            .col-#{$breakpoint} {
+                @extend %grid-column;
+            }
+
+            @for $i from 1 through $columns {
+                .col-#{$breakpoint}-#{$i} {
+                    @extend %grid-column;
+                }
+            }
+        }
+
+        @include media-breakpoint('#{$breakpoint}-up') {
+            @for $i from 1 through $columns {
+                .col-#{$breakpoint}-#{$i} {
+                    @include grid-column($i, $columns);
+                }
+            }
+        }
+    }
+}
+
+@mixin grid-column ($size, $columns: $grid-columns) {
+    flex: 0 0 percentage($size / $columns);
+}

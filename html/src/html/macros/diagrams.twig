@@ -1,0 +1,77 @@
+{#
+    Macro to output 4th diagram
+#}
+
+{% macro diagramDash (radius, offset) %}
+    {% set MATH_PI = 3.141592 %}
+    {% set PIE_SIZE = 3 / 4 %}
+
+    {% if offset %}
+        {{ 2 * MATH_PI * radius * PIE_SIZE * (1 - offset) }}
+    {% else %}
+        {{ 2 * MATH_PI * radius * PIE_SIZE }}
+    {% endif %}
+{% endmacro %}
+
+{% macro diagram4 (data) %}
+
+    <div class="diagram-4 js-circular-diagram">
+
+        <label class="label-1">{{ data.labels[0] }} <small>{{ data.values[0] * 100}}%</small></label>
+        <label class="label-2">{{ data.labels[1] }} <small>{{ data.values[1] * 100}}%</small></label>
+        <label class="label-3">{{ data.labels[2] }} <small>{{ data.values[2] * 100}}%</small></label>
+        <label class="label-4">{{ data.labels[3] }} <small>{{ data.values[3] * 100}}%</small></label>
+        <label class="label-5">{{ data.labels[4] }} <small>{{ data.values[4] * 100}}%</small></label>
+
+        <svg height="265" viewBox="0 0 265 265" width="265" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    #line-1 {
+                        stroke-dasharray: {{ diagramDash(139 / 2) }};
+                        stroke-dashoffset: {{ diagramDash(139 / 2, data.values[0]) }};
+                    }
+                    #line-2 {
+                        stroke-dasharray: {{ diagramDash(169.016 / 2) }};
+                        stroke-dashoffset: {{ diagramDash(169.016 / 2, data.values[1]) }};
+                    }
+                    #line-3 {
+                        stroke-dasharray: {{ diagramDash(199.02 / 2) }};
+                        stroke-dashoffset: {{ diagramDash(199.02 / 2, data.values[2]) }};
+                    }
+                    #line-4 {
+                        stroke-dasharray: {{ diagramDash(229.042 / 2) }};
+                        stroke-dashoffset: {{ diagramDash(229.042 / 2, data.values[3]) }};
+                    }
+                    #line-5 {
+                        stroke-dasharray: {{ diagramDash(259.012 / 2) }};
+                        stroke-dashoffset: {{ diagramDash(259.012 / 2, data.values[4]) }};
+                    }
+                </style>
+            </defs>
+            <path class="line-back" d="M132.5,63A69.5,69.5,0,1,1,63,132.5" />
+            <path class="line-back" d="M132.5,47.992A84.508,84.508,0,1,1,47.992,132.5" />
+            <path class="line-back" d="M132.5,32.99A99.51,99.51,0,1,1,32.99,132.5" />
+            <path class="line-back" d="M132.5,17.979A114.521,114.521,0,1,1,17.979,132.5" />
+            <path class="line-back" d="M132.5,2.994A129.506,129.506,0,1,1,2.994,132.5" />
+
+            <path class="line-front" d="M132.5,63A69.5,69.5,0,1,1,63,132.5" id="line-1"/>
+            <path class="line-front" d="M132.5,47.992A84.508,84.508,0,1,1,47.992,132.5" id="line-2"/>
+            <path class="line-front" d="M132.5,32.99A99.51,99.51,0,1,1,32.99,132.5" id="line-3"/>
+            <path class="line-front" d="M132.5,17.979A114.521,114.521,0,1,1,17.979,132.5" id="line-4"/>
+            <path class="line-front" d="M132.5,2.994A129.506,129.506,0,1,1,2.994,132.5" id="line-5"/>
+
+            <circle class="corner-front" cx="132" cy="63" r="3"/>
+            <circle class="corner-back" cx="132" cy="63" r="2.031"/>
+            <circle class="corner-front" cx="132" cy="48" r="3"/>
+            <circle class="corner-back" cx="132" cy="48" r="2.031"/>
+            <circle class="corner-front" cx="132" cy="33" r="3"/>
+            <circle class="corner-back" cx="132" cy="33" r="2.031"/>
+            <circle class="corner-front" cx="132" cy="18" r="3"/>
+            <circle class="corner-back" cx="132" cy="18" r="2.031"/>
+            <circle class="corner-front" cx="132" cy="3"  r="3"/>
+            <circle class="corner-back" cx="132" cy="3"  r="2.031"/>
+        </svg>
+
+    </div>
+
+{% endmacro %}

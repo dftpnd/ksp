@@ -1,0 +1,19 @@
+{% import 'macros/helpers.twig' as helpers %}
+
+<header class="header {% if theme %}{{ theme }}{% endif %}">
+
+    {# Logo #}
+    <a href="/" class="logo">{{ helpers.icon('logo', 145, 30) }}</a>
+
+    {# Sitemap button #}
+    <a class="btn btn-link sitemap-button js-sitemap-toggle" tabIndex="0"><span class="icon icon-sitemap"><span></span></span></a>
+
+    {# Main navigation #}
+    {% set links = navigation %}
+    {% set className = 'nav-primary' %}
+    {% include 'partials/navigation.twig' %}
+
+    {# Language switch #}
+    {% include 'partials/language-switch.twig' %}
+
+</header>

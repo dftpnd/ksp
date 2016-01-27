@@ -1,0 +1,37 @@
+{
+    "navigation": [
+        { "title": "Компания", "href": "#", "main": true },
+        { "title": "Услуги",   "href": "#", "main": true, "active": true },
+        { "title": "Проекты",  "href": "#", "main": true },
+        { "title": "Команда",  "href": "#" },
+        { "title": "Новости",  "href": "news.html" },
+        { "title": "Контакты", "href": "#" }
+    ],
+
+    "locales": [
+        { "id": "en", "title": "ENG", "href": "#" },
+        { "id": "ru", "title": "RUS", "href": "#" }
+    ],
+
+    "homepage": {
+        "navigation": [
+            { "title": "ценности",      "href": "#1", "active": true },
+            { "title": "опыт",          "href": "#2" },
+            { "title": "",              "href": "#3" },
+            { "title": "эффективность", "href": "#4" },
+            { "title": "",              "href": "#5" },
+            { "title": "",              "href": "#6" },
+            { "title": "",              "href": "#7" },
+            { "title": "гибкость",      "href": "#8" },
+            { "title": "",              "href": "#9" }
+        ]
+    },
+
+    "sitemap": {
+
+    },
+
+    "locale": "ru",
+
+    "title": "KSP"
+}

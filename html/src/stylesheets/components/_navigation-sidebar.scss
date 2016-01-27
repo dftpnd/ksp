@@ -1,0 +1,60 @@
+/**
+ * Sidebar navigation
+ */
+.nav-sidebar {
+    @extend %layout-on-top;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 0 1px;
+    z-index: 10;
+    ul {
+        @include list-unstyle ();
+    }
+
+    a {
+        @extend %link-nav-secondary;
+        @extend %text-xs;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    // Line styles
+    a {
+        display: block;
+        position: relative;
+        padding-left: 40px;
+        height: $text-xs-height;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: currentColor;
+            height: 1px;
+            width: 30px;
+
+            transform: translateY(7px) scale(1, 1);
+            transform-origin: left top;
+            transition: transform $duration-normal $easing-in;
+            will-change: transform;
+        }
+        &:empty:before {
+            width: 15px;
+        }
+
+        @include link-hover () {
+            &:before {
+                transform: translateY(6px) scale(1, 3);
+            }
+        }
+
+        @include link-active () {
+            &:before {
+                transform: translateY(4px) scale(1, 7);
+            }
+        }
+    }
+}

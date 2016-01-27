@@ -1,0 +1,18 @@
+/**
+ * Disable all user interactions with element.
+ * User won't be able to focus, click or even select element.
+ *
+ * @example
+ *   a {
+ *     @include disable-ui-interactions ();
+ *   }
+ */
+
+@mixin disable-interactions () {
+    cursor: default !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    -moz-user-focus: ignore !important; // This is non-standard property and supported only by FF
+    -webkit-touch-callout: none !important;
+    -ms-touch-action: none !important;
+}

@@ -1,0 +1,55 @@
+/**
+ * Screen is a content component, which takes all screen height
+ */
+
+.screen-container {
+    @include media-all-100vh-body-fix ();
+}
+.screen-scrollable{
+    @include media-all-100vh-body-fix ();
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.screen-container,
+.screen {
+    // This will fix toolbar height issue
+    @include media-all-100vh (min-height);
+
+    // Prevent scrollbars
+    overflow: hidden;
+
+    .screen-box {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        left: 0;
+        .screen-box__body-bg {
+            background: #f0efec;
+            flex: 1;
+        }
+
+        .screen-box__body-wrap {
+            .screen__video {
+                height: 100%;
+                position: absolute;
+            }
+
+            .screen-box__body-img {
+                display: block;
+                width: auto;
+                height: 100vh;
+                position: relative;
+            }
+        }
+    }
+}
+
+.no-js .screen-container {
+    // If for some reason JS is disabled then allow default scroll
+    overflow: auto;
+}
+
+@import "transition";
+@import "content";

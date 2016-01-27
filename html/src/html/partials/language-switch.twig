@@ -1,0 +1,9 @@
+<nav class="language-switch">
+    {% for item in locales %}
+        {% if item.id != locale %}
+
+            <a class="btn btn-hollow btn-sm" href="{{ item.href }}">{{ item.title }}</a>
+
+        {% endif %}
+    {% endfor %}
+</nav>

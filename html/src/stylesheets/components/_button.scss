@@ -1,0 +1,183 @@
+/**
+ * Buttons
+ *
+ * Creates a button. Can be used with either <a>, <button> or <input type="submit"> elements.
+ *
+ * @markup
+ *   <a class="btn">Default button</a>
+ *   <a class="btn disabled">Disabled state</a>
+ */
+
+.btn {
+    border: 0;
+    box-shadow: none;
+    position: relative;
+
+    // Text
+    font-size: $button-text-size;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+
+    // Horizontally and vertically align content
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    // Size
+    height: $button-size;
+    padding: $button-padding;
+    border-radius: $button-rounded;
+}
+
+
+/**
+ * Smaller size button modifier
+ *
+ * @markup
+ *   <a class="btn btn-primary btn-sm">Small button</a>
+ */
+
+.btn-sm {
+    height: $button-sm-size;
+    padding: $button-sm-padding;
+    border-radius: $button-sm-rounded;
+
+    // Text
+    font-size: $button-sm-text-size;
+
+    // Icon
+    &.btn-icon {
+        width: $button-sm-size;
+    }
+}
+
+
+/**
+ * Large size button modifier
+ *
+ * @markup
+ *   <a class="btn btn-primary btn-lg">Large button</a>
+ */
+
+.btn-lg {
+    height: $button-lg-size;
+    padding: $button-lg-padding;
+    border-radius: $button-lg-rounded;
+
+    // Text
+    font-size: $button-lg-text-size;
+
+    // Icon
+    &.btn-icon {
+        width: $button-lg-size;
+    }
+}
+
+
+/**
+ * Square button modifier
+ * Button becomes same width as height
+ *
+ * @markup
+ *   <a class="btn btn-square"></a>
+ */
+
+.btn-square {
+    width: $button-size;
+    padding: 0;
+
+    &.btn-sm {
+        width: $button-sm-size;
+    }
+
+    &.btn-lg {
+        width: $button-lg-size;
+    }
+}
+
+
+/**
+ * Circular button modifier
+ *
+ * @markup
+ *   <a class="btn btn-circular">Circular button</a>
+ */
+
+.btn-circular {
+    border-radius: 100px;
+}
+
+
+/**
+ * Call to action button style modifier
+ *
+ * 1. Needed for button-group when changing style from primary to hollow border
+ * is animated and causes content movement
+ *
+ * @markup
+ *   <a class="btn btn-primary">Call to action button style</a>
+ */
+
+.btn-primary {
+    border: 1px solid; // 1.
+
+    @each $theme, $colors in $themes {
+        #{$theme} & {
+            @include button-variant (
+                $color:             map-get($colors, background),
+                $border:            map-get($colors, heading),
+                $background:        map-get($colors, heading),
+
+                $color-active:      map-get($colors, background),
+                $border-active:     map-get($colors, primary),
+                $background-active: map-get($colors, primary)
+            );
+        }
+    }
+}
+
+
+/**
+ * Hollow button style modifier
+ *
+ * @markup
+ *   <a class="btn btn-hollow">Hollow button style</a>
+ */
+
+.btn-hollow {
+    border: 1px solid;
+
+    @each $theme, $colors in $themes {
+        #{$theme} & {
+            @include button-variant (
+                $color:         map-get($colors, text),
+                $border:        rgba(map-get($colors, text), 0.3),
+
+                $color-active:  map-get($colors, text),
+                $border-active: map-get($colors, text)
+            );
+        }
+    }
+}
+
+
+/**
+ * Button looking like a link
+ *
+ * @markup
+ *   <a class="btn btn-link">Link button</a>
+ */
+
+.btn-link {
+    // By default button looks like a link, that's why isn't anything here
+}
+
+.btn-news-modal{
+    &:hover {
+        border: 2px solid #bc9d6f!important;
+        svg{
+            fill: #bc9d6f!important;
+        }
+    }
+}

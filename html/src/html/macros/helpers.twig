@@ -1,0 +1,31 @@
+{#
+    Macro to output an icon from icon sprite
+#}
+
+{% macro icon(name, width, height) %}
+    <svg class="icon icon-{{ name }}"
+        {% if width %}width="{{ width }}"{% endif %}
+        {% if height %}height="{{ height }}"{% endif %}
+        >
+        <use xlink:href="/images/icon-sprites.svg#{{ name }}" />
+    </svg>
+{% endmacro %}
+
+
+{#
+    Macro to output a video in all formats
+#}
+
+{% macro video(url, attrs) %}
+    <video
+    	loop
+    	preload="none"
+        {% for name, value in attrs %}
+            {{ name }}="{{ value }}"
+        {% endfor %}
+    	poster="{{ url }}.jpg">
+        <source src="{{ url }}.mp4" type='video/mp4' />
+        <source src="{{ url }}.webm" type='video/webm' />
+        <source src="{{ url }}.ogv" type='video/ogg' />
+    </video>
+{% endmacro %}

@@ -1,0 +1,22 @@
+/*
+ * Grid demo styles for style guide
+ */
+
+.container-demo {
+    padding: $spacer-y / 2 $spacer-x;
+}
+
+.grid-demo {
+    margin-top: $spacer-y;
+    margin-bottom: $spacer-y;
+
+    &-content {
+        display: block;
+        height: $spacer-y;
+        background: $color-primary;
+    }
+}
+
+code {
+    font-size: 80%;
+}

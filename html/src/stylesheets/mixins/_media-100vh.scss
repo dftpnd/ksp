@@ -1,0 +1,81 @@
+/**
+ * Mixin sets property value as 100vh and in case of iOS in pixels
+ *
+ * On iOS vh unit includes toolbar and in case page doesn't have a scroll
+ * it makes page look like broken. Sets property value in px, but without
+ * toolbar.
+ *
+ * Should be used only when page has custom scroll
+ *
+ * @example
+ *   body {
+ *     @include media-all-100vh-body-fix ();
+ *   }
+ *   section {
+ *     @include media-all-100vh ('min-height');
+ *   }
+ */
+
+@mixin media-all-100vh ($property) {
+    #{$property}: 100vh;
+
+    $devicesPhones: (
+        (568,  320,  88, 108), // iPhone5, iPhone5s: width, height, toolbar size landscape, toolbar size portrait
+        (667,  375,  44, 108), // iPhone6, iPhone6s
+        (736,  414,  44, 108)  // iPhone6+, iPhone6s+
+    );
+
+    $devicesTablets: (
+        (1024, 768,  64, 64),  // iPad Mini, iPad Air
+        (1366, 1024, 64, 64)   // iPad Pro
+    );
+
+    @each $device in $devicesPhones {
+        $width:    nth($device, 1) * 1px;
+        $height:   nth($device, 2) * 1px;
+        $toolbarL: nth($device, 3) * 1px;
+        $toolbarP: nth($device, 4) * 1px;
+
+        // Landscape
+        @media screen and (height: #{$height}) and (width: #{$width}) {
+            #{$property}: $height - $toolbarL;
+        }
+
+        // Portrait
+        $heightP: $width - $toolbarP;
+        @media screen and (height: #{$heightP}) and (width: #{$height}) {
+            #{$property}: $heightP;
+        }
+    }
+
+    @each $device in $devicesTablets {
+        $width:    nth($device, 1) * 1px;
+        $height:   nth($device, 2) * 1px;
+        $toolbarL: nth($device, 3) * 1px;
+        $toolbarP: nth($device, 4) * 1px;
+
+        // Landscape
+        $heightL: $height - $toolbarL;
+        @media screen and (height: #{$heightL}) and (width: #{$width}) {
+            #{$property}: $heightL;
+        }
+
+        // Portrait
+        $heightP: $width - $toolbarP;
+        @media screen and (height: #{$heightP}) and (width: #{$height}) {
+            #{$property}: $heightP;
+        }
+    }
+}
+
+/*
+ * Move content so that there is no blank space at the bottom on iPhone5
+ * Must be applied to the BODY
+ */
+@mixin media-all-100vh-body-fix () {
+    // iPhone 5 and iPhone 5s in landscape orientation
+    @media screen and (height: 320px) and (width: 568px) {
+        // Need to move content only for iPhone 5
+        transform: translateY(43px);
+    }
+}
